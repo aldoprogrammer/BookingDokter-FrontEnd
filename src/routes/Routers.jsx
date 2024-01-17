@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Home from '../pages/Home'
 import Doctors from '../pages/Doctors/Doctors'
 import DoctorDetails from '../pages/Doctors/DoctorDetails'
@@ -18,6 +18,7 @@ const Routers = () => {
         <Route path='/register' element={<Signup />} />
         <Route path='/services' element={<Services />} />
     </Routes>
+    
   )
 }
 
