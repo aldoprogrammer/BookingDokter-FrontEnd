@@ -10,7 +10,7 @@
 
 @layer components {
     .container {
-        @apply max-w-full w-[1440px] px-5 mx-auto
+        @apply max-w-full w-[1440px] px-5 mx-auto my-16
     }
 
     .btn {
@@ -36,7 +36,7 @@
 
 @media only screen and (max-width: 1024px) {
     .container {
-        @apply w-full
+        @apply w-full my-10
     }
 
     section {
