@@ -4,7 +4,7 @@
 
 @layer base {
     section{
-        @apply max-w-full w-[1440px] px-5 mx-auto
+        @apply max-w-full w-[1440px] px-5 mx-auto 
     }
 }
 
@@ -40,7 +40,7 @@
     }
 
     section {
-        @apply py-[35px]
+        @apply py-[35px] 
     }
 }
 
