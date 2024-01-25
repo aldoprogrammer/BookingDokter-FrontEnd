@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react'
 import userImg from '../../assets/images/doctor-img01.png'
 import { authContext } from '../../context/AuthContext'
+import MyBookings from './MyBookings'
+import Profile from './Profile'
 
 const MyAccount = () => {
     const {dispatch} = useContext(authContext)
@@ -78,6 +80,9 @@ const MyAccount = () => {
                         Profile Settings
                     </button>
                 </div>
+                        {tab === 'bookings' && <MyBookings />}
+                        {tab === 'settings' && <Profile />}
+
             </div>
         </div>    
     </div>
