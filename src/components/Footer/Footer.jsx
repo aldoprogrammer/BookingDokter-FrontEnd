@@ -88,7 +88,7 @@ const Footer = () => {
               Copyright {year} developed by Aldo L.S.
             </p>
 
-            <div className="flex">
+            <div className="flex gap-2 mt-4">
               {socialLinks.map((link, index) => {
                 return (
                   <Link
