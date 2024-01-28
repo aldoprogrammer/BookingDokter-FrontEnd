@@ -4,7 +4,7 @@ import useGetProfile from '../../hooks/useFecthData.jsx'
 import { BASE_URL } from '../../config.js'
 import Tabs from './Tabs'
 import { useState } from 'react'
-import { FaExclamation } from "react-icons/fa";
+import { FaExclamation, FaExclamationCircle } from "react-icons/fa";
 
 
 
@@ -29,13 +29,46 @@ const Dashboard = () => {
             <Tabs tab={tab} setTab={setTab} />
             <div className="lg:col-span-2">
               {data.isApproved === "pending" && (
-                <div className="flex p-4 mb-4 text-yellow-800 bg-yellow-50 rounded-lg">
-                  <p>hi</p>
-                  <span className='flex-shrink-0 w-5 h-5'>
-                    <FaExclamation />
-                  </span>
+                <div className="flex p-4 mb-4 text-yellow-800 bg-yellow-50 
+                rounded-lg items-center">
+                  
+                  <FaExclamationCircle className='flex-shrink-0 w-5 h-5'/>
+                  
+                  <span className="sr-only">Info</span>
+                  <div className="ml-2 text-sm font-medium">
+                    To get approval, please complete your profile.
+                    Review manually and approvae within 3 days.
+                  </div>
                 </div>
               )}
+
+              <div className="mt-8">
+                {
+                  tab === 'overview' && (
+                    <div>
+                      <div className="flex items-center gap-4 mb-10">
+                        <figure className='max-w-[200px] max-h-[200px]'>
+                          <img 
+                            src={data?.photo} 
+                            alt=''
+                            className='w-full' />
+                        </figure>
+                      </div>
+                    </div>
+                  )
+                }
+                {
+                  tab === 'appointments' && (
+                    <div>appointments</div>
+                  )
+                }
+                {
+                  tab === 'settings' && (
+                    <div>settings</div>
+                  )
+                }
+
+              </div>
             </div>
           </div>
         )}
