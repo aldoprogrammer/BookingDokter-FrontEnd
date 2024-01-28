@@ -6,6 +6,7 @@ import Profile from './Profile'
 import useGetProfile from '../../hooks/useFecthData'
 import { BASE_URL } from '../../config'
 import Loading from '../../components/Loader/Loading'
+import Error from '../../components/Error/Error'
 
 const MyAccount = () => {
     const {dispatch} = useContext(authContext)
@@ -27,7 +28,9 @@ const MyAccount = () => {
 
   return (
     <div className='max-w-[1170px] px-5 mx-auto my-10'>
-        {loading && <Loading/>}
+        {loading && !error && <Loading/>}
+
+        { error && !loading && <Error errMessage={error}/> }
 
         {
             !loading && !error && (

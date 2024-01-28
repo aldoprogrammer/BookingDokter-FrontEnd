@@ -27,6 +27,7 @@ const useFecthData = (url) => {
             } catch (err) {
                 setLoading(false)
                 setError(err.message)
+                console.error('Fetch Error:', err);
             }  
          }
          fetchData()
