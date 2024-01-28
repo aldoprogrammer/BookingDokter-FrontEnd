@@ -3,6 +3,9 @@ import userImg from '../../assets/images/doctor-img01.png'
 import { authContext } from '../../context/AuthContext'
 import MyBookings from './MyBookings'
 import Profile from './Profile'
+import useGetProfile from '../../hooks/useFecthData'
+import { BASE_URL } from '../../config'
+import Loading from '../../components/Loader/Loading'
 
 const MyAccount = () => {
     const {dispatch} = useContext(authContext)
@@ -14,9 +17,21 @@ const MyAccount = () => {
         })
     }
 
+    const {
+        data: userData,
+        loading,
+        error
+    } = useGetProfile(`${BASE_URL}/users/profile/me`)
+
+    console.log(userData, "userData")
+
   return (
     <div className='max-w-[1170px] px-5 mx-auto my-10'>
-        <div className="grid md:grid-cols-3 gap-10">
+        {loading && <Loading/>}
+
+        {
+            !loading && !error && (
+                <div className="grid md:grid-cols-3 gap-10">
             <div className="pb-[50px] px-[30px] rounded-md">
                 <div className="flex items-center justify-center">
                     <figure className='w-[100px] h-[100px] rounded-full
@@ -85,6 +100,8 @@ const MyAccount = () => {
 
             </div>
         </div>    
+            )
+        }
     </div>
   )
 }
