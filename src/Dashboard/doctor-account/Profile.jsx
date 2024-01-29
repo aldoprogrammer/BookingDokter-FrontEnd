@@ -6,10 +6,16 @@ const Profile = () => {
         email: '',
         phone: '',
         bio: '',
+        gender: '',
+        specialization: '',
+        ticketPrice: 0,
+        qualifications: [],
+        experiences: [],
+        timeSlots: [],
     })
 
     const handleInputChange = (e) => {
-
+        setFormData({...formData, [e.target.name]:e.target.value})
     }
 
 
@@ -78,8 +84,59 @@ const Profile = () => {
                         className='form__input'
                         maxLength={100}
                         />
-                
             </div>
+
+            <div className="mb-5">
+                <div className="grid grid-cols-3 gap-5 mb-[30px]">
+                    <div>
+                        <p className="form__label">
+                            Gender
+                        </p>
+                        <select 
+                            name="gender"
+                            value={formData.gender}
+                            onChange={handleInputChange}
+                            className='form__input py-3.5'    
+                        >
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p className="form__label">
+                            Specialization
+                        </p>
+                        <select 
+                            name="specialization"
+                            value={formData.specialization}
+                            onChange={handleInputChange}
+                            className='form__input py-3.5'    
+                        >
+                            <option value="">Select</option>
+                            <option value="surgeon">Surgeon</option>
+                            <option value="neurologist">Neurologist</option>
+                            <option value="dermatologist">Dermatologist</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p className="form__label">
+                            Ticket Price
+                        </p>
+                        <input 
+                            type="number" 
+                            name="ticketPrice" 
+                            value={formData.ticketPrice} 
+                            onChange={handleInputChange}
+                            placeholder='100'
+                            className='form__input'
+                            />
+                    </div>
+                </div>
+            </div>
+
+           
         </form>
     </div>
   )
