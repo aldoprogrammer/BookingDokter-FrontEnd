@@ -9,7 +9,7 @@ const Profile = () => {
         gender: '',
         specialization: '',
         ticketPrice: 0,
-        qualifications: [],
+        qualifications: [{startingDate: '', endingDate: ''}],
         experiences: [],
         timeSlots: [],
     })
@@ -136,7 +136,43 @@ const Profile = () => {
                 </div>
             </div>
 
-           
+            <div className="mb-5">
+                <p className="form__label">
+                    Qualifications
+                </p>
+                {formData.qualifications?.map((item, index) => (
+                    <div key={index}>
+                        <div>
+                            <div className="grid grid-cols-2 gap-5">
+                                <div>
+                                    <p className="form__label">
+                                        Starting Date
+                                    </p>
+                                    <input 
+                                        type="date" 
+                                        name="startingDate"
+                                        value={item.startingDate}
+                                        className='form__input'
+                                        />
+                                </div>
+                                <div>
+                                    <p className="form__label">
+                                        Ending Date
+                                    </p>
+                                    <input 
+                                        type="date" 
+                                        name="endingDate"
+                                        value={item.endingDate}
+                                        className='form__input'
+                                        />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))
+                
+                }
+            </div>
         </form>
     </div>
   )
