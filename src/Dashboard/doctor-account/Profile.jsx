@@ -31,6 +31,48 @@ const Profile = () => {
 
     }
 
+    const updateProfileHandler = async e => {
+        e.preventDefault();
+    }
+
+
+    const addItem = (key, item) => {
+        setFormData(prevFormData => ({
+            ...prevFormData,
+            [key]: [...prevFormData[key], item]
+        }))
+    }
+
+    const addQualtification = (e) => {
+        e.preventDefault();
+
+        addItem('qualifications', {
+            startingDate: '',
+            endingDate: '',
+            degree: '',
+            university: '',
+        })
+    }
+
+    const handleReusableInputChangeFund = (key, index, event) => {
+        const { name, value } = event.target
+
+        setFormData(prevFormData => {
+            const updateItems = [...prevFormData[key]]
+
+            updateItems[index][name] = value
+
+            return {
+                ...prevFormData,
+                [key]: updateItems,
+            }
+        })
+    }
+
+    const handleQualificationChange = (event, index) => {
+        handleReusableInputChangeFund('qualifications', index, event)
+    }
+
 
 
   return (
@@ -167,6 +209,7 @@ const Profile = () => {
                                         name="startingDate"
                                         value={item.startingDate}
                                         className='form__input'
+                                        onChange={(e) => handleQualificationChange(e, index)}
                                         />
                                 </div>
                                 <div>
@@ -178,6 +221,7 @@ const Profile = () => {
                                         name="endingDate"
                                         value={item.endingDate}
                                         className='form__input'
+                                        onChange={(e) => handleQualificationChange(e, index)}
                                         />
                                 </div>
                             </div>
@@ -191,6 +235,7 @@ const Profile = () => {
                                         name="degree"
                                         value={item.degree}
                                         className='form__input'
+                                        onChange={(e) => handleQualificationChange(e, index)}
                                         />
                                 </div>
                                 <div>
@@ -202,6 +247,7 @@ const Profile = () => {
                                         name="university"
                                         value={item.university}
                                         className='form__input'
+                                        onChange={(e) => handleQualificationChange(e, index)}
                                         />
                                 </div>
                             </div>
@@ -214,7 +260,9 @@ const Profile = () => {
                     </div>
                 ))}
 
-                <button className='bg-[#000] py-2 px-5 rounded text-white
+                <button 
+                onClick={addQualtification}
+                className='bg-[#000] py-2 px-5 rounded text-white
                 h-fit cursor-pointer'>
                     Add Qualification
                 </button>
@@ -408,7 +456,10 @@ const Profile = () => {
             </div>  
 
             <div className="mt-7">
-                <button className='bg-primaryColor text-white text-[18px] leading-[30px]
+                <button 
+                type='submit'
+                onClick={updateProfileHandler}
+                className='bg-primaryColor text-white text-[18px] leading-[30px]
                 w-full py-3 px-3 rounded-lg'>
                     Update Profile
                 </button>    
