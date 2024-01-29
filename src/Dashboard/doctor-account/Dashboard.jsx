@@ -6,7 +6,8 @@ import Tabs from './Tabs'
 import { useState } from 'react'
 import { FaExclamation, FaExclamationCircle } from "react-icons/fa";
 import starIcon from '../../assets/images/Star.png'
-
+import DoctorAbout from '../../pages/Doctors/DoctorAbout.jsx'
+import Profile from '../doctor-account/Profile.jsx'
 
 
 const Dashboard = () => {
@@ -87,6 +88,13 @@ const Dashboard = () => {
                         </p>
                         </div>                       
                       </div>
+
+                      <DoctorAbout 
+                        name={data.name}
+                        about={data.about}
+                        qualifications={data.qualifications}
+                        experiences={data.experiences}
+                      />
                     </div>
                   )
                 }
@@ -97,7 +105,7 @@ const Dashboard = () => {
                 }
                 {
                   tab === 'settings' && (
-                    <div>settings</div>
+                    <Profile />
                   )
                 }
 
