@@ -121,7 +121,9 @@ const DoctorDetails = () => {
                     qualifications={qualifications}
                   />)
                 }
-                {tab === 'feedback' && <Feedback />}
+                {tab === 'feedback' && (
+                <Feedback reviews={reviews} totalRating={totalRating}/>
+                )}
             </div>      
           </div>
 
