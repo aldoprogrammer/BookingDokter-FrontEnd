@@ -105,7 +105,7 @@ const Dashboard = () => {
                 }
                 {
                   tab === 'settings' && (
-                    <Profile />
+                    <Profile doctorData={data}/>
                   )
                 }
 

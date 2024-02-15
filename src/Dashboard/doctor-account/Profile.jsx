@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineDelete} from 'react-icons/ai'
 import uploadImageToCloudinary from '../../utils/uploadCloudinary';
 import { toast } from 'react-toastify';
@@ -21,6 +21,23 @@ const Profile = ({doctorData}) => {
         about: '',
         photo: '',
     })
+
+    useEffect(() => {
+        setFormData({
+            name: doctorData?.name,
+            email: doctorData?.email,
+            phone: doctorData?.phone,
+            bio: doctorData?.bio,
+            gender: doctorData?.gender,
+            specialization: doctorData?.specialization,
+            ticketPrice: doctorData?.ticketPrice,
+            qualifications: doctorData?.qualifications,
+            experiences: doctorData?.experiences,
+            timeSlots: doctorData?.timeSlots,
+            about: doctorData?.about,
+            photo: doctorData?.photo
+        })
+    }, [doctorData])
 
     const handleInputChange = (e) => {
         setFormData({...formData, [e.target.name]:e.target.value})
