@@ -8,6 +8,7 @@ import { FaExclamation, FaExclamationCircle } from "react-icons/fa";
 import starIcon from '../../assets/images/Star.png'
 import DoctorAbout from '../../pages/Doctors/DoctorAbout.jsx'
 import Profile from '../doctor-account/Profile.jsx'
+import Appointments from './Appointments.jsx'
 
 
 const Dashboard = () => {
@@ -100,7 +101,7 @@ const Dashboard = () => {
                 }
                 {
                   tab === 'appointments' && (
-                    <div>appointments</div>
+                    <Appointments appointments={data.appointments} />
                   )
                 }
                 {

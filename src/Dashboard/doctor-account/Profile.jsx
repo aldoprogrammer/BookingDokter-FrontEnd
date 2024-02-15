@@ -50,7 +50,7 @@ const Profile = ({doctorData}) => {
         
     }
 
-    const updateProfileHandler = async e => {
+    const updateProfileHandler = async (e) => {
         e.preventDefault();
         try {
             const res = await fetch(`${BASE_URL}/doctors/${doctorData._id}`, {

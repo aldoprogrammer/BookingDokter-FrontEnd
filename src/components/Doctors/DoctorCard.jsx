@@ -9,9 +9,11 @@ const DoctorCard = ({doctor}) => {
         avgRating,
         photo,
         specialty,
+        specialization,
         totalRating,
         totalPatients,
-        hospital
+        hospital,
+        experiences
     } = doctor;
   return (
     <div className='p-3 lg:p-5'>
@@ -29,7 +31,7 @@ const DoctorCard = ({doctor}) => {
             <span className='bg-[#ccf0f3] text-irisBlueColor py-1 px-2 lg:py-2
             lg:px-6 text-[12px] leading-4 lg:text-[16px] lg:leading-7
             font-semibold rounded '>
-                {specialty}
+                {specialization || 'general doctor'}
             </span>
             <div className="flex items-center gap-[6px]">
                 <span className='flex items-center gap-[6px] text-[14px] leading-6
@@ -45,13 +47,13 @@ const DoctorCard = ({doctor}) => {
 
         <div className="mt-[18px] lg:mt-5 flex items-center justify-between">
             <div>
-                <h3 className='text-base leading-7 lg:text-[18px]
+                {/* <h3 className='text-base leading-7 lg:text-[18px]
                 lg:leading-[30px] font-semibold text-headingColor'>
                     +{totalPatients} patiens
-                </h3>
+                </h3> */}
                 <p className='text-sm leading-6 font-normal
                 text-textColor'>
-                    at {hospital}
+                    at {experiences && experiences[0]?.hospital}
                 </p>
             </div>
             <Link 
