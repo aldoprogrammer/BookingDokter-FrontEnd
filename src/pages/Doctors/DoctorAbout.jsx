@@ -10,11 +10,11 @@ const DoctorAbout = ({name, about, qualifications, experiences}) => {
                 About of
                 <span className='text-irisBlueColor font-bold
                 text-2xl leading-9'>
-                    Aldo lata soba
+                    {name}
                 </span>
             </h3>
             <p className="text__para">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aut, delectus dolore ratione cumque dolores earum cupiditate, nihil quibusdam voluptas modi culpa dolorem. Id reiciendis deleniti maxime praesentium quibusdam ipsa.
+                {about}
             </p>
         </div>
 
@@ -25,36 +25,27 @@ const DoctorAbout = ({name, about, qualifications, experiences}) => {
             </h3>
 
             <ul className="pt-4 md:p-5">
-                <li className="flex flex-col sm:flex-row sm:justify-between
-                sm:items-end md:gap-5 mb-[30px]">
-                    <div>
-                        <span className='text-irisBlueColor text-[15px] leading-6
+                {qualifications?.map((item, index) => (
+                
+                <li key={index} className="flex flex-col sm:flex-row sm:justify-between
+                sm:items-end md:gap-5 mb-[30px]"> 
+                <div>
+                <span className='text-irisBlueColor text-[15px] leading-6
                         font-semibold'>
-                            {formateDate("03-20-2014")} - {formateDate("03-20-2014")}
+                            {formateDate(item.startingDate)} - {formateDate(item.endingDate)}
                         </span>
                         <p className="text-base leading-6 font-medium text-textColor">
-                            Informatich of Engineering
+                            {item.degree}
                         </p>
                     </div>  
                     <p className="text-sm leading-5 font-medium text-textColor">
-                            Universitas Muhammadiyah Bengkulu, Indonesia
+                        {item.university}
                         </p>  
                 </li>
-                <li className="flex flex-col sm:flex-row sm:justify-between
-                sm:items-end md:gap-5 mb-[30px]">
-                    <div>
-                        <span className='text-irisBlueColor text-[15px] leading-6
-                        font-semibold'>
-                            {formateDate("09-20-2014")} - {formateDate("03-20-2014")}
-                        </span>
-                        <p className="text-base leading-6 font-medium text-textColor">
-                            Informatich of Engineering
-                        </p>
-                    </div>  
-                    <p className="text-sm leading-5 font-medium text-textColor">
-                            Universitas Muhammadiyah Bengkulu, Indonesia
-                        </p>  
-                </li>
+                ))}
+                
+                    
+                        
             </ul>
         </div>
 
@@ -64,30 +55,20 @@ const DoctorAbout = ({name, about, qualifications, experiences}) => {
                 Experience
             </h3>
             <ul className="grid sm:grid-cols-2 gap-[30px] pt-4 md:p-5">
-                <li className="p-4 bg-[#fff9ea]">
+                {experiences?.map((item, index) => (
+                    <li key={index} className="p-4 bg-[#fff9ea]">
                     <span className='text-yellowColor text-base leading-6
                     font-semibold'>
-                            {formateDate("09-20-2014")} - {formateDate("03-20-2014")}
+                            {formateDate(item.startingDate)} - {formateDate(item.endingDate)}
                     </span>
                     <p className="text-base leading-6 font-medium text-textColor">
-                            Frontend Web Developer
+                            {item.position}
                         </p>
                     <p className="text-sm leading-5 font-medium text-textColor">
-                            Borrow4Less, Canada.
+                            {item.hospital}
                         </p>  
                 </li>
-                <li className="p-4 bg-[#fff9ea]">
-                    <span className='text-yellowColor text-base leading-6
-                    font-semibold'>
-                            {formateDate("09-20-2014")} - {formateDate("03-20-2014")}
-                    </span>
-                    <p className="text-base leading-6 font-medium text-textColor">
-                            Frontend Web Developer
-                        </p>
-                    <p className="text-sm leading-5 font-medium text-textColor">
-                            Borrow4Less, Canada.
-                        </p>  
-                </li>
+                ))}
             </ul>
         </div>
 
