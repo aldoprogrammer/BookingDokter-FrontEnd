@@ -37,7 +37,9 @@ const Home = () => {
                     <p className='text__para'>
                       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur mollitia eveniet ipsum aperiam illum. Fuga quam assumenda repellendus enim tempore facilis, error veniam, vitae, tempora nostrum quaerat similique repellat. Aperiam?
                     </p>
-                    <button className='btn'>Request an Appointment</button>
+                    <Link to="/doctors">
+                        <button className='btn'>Request an Appointment</button>
+                    </Link>
                   </div>
 
                   {/* hero counter */}
