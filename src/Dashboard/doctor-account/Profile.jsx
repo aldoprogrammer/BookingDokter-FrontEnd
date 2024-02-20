@@ -200,9 +200,7 @@ const Profile = ({doctorData}) => {
                         onChange={handleInputChange}
                         placeholder='Email'
                         className='form__input'
-                        aria-readonly
-                        readOnly
-                        disabled='true'
+                     
                         />
                 
             </div>
