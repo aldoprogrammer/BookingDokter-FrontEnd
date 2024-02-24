@@ -87,7 +87,7 @@ const Header = () => {
                     <img 
                       src={user?.photo || noPhoto}
                       alt='Logo'
-                      className='w-full rounded-full'
+                      className='w-full h-full rounded-full'
                     />
                   </figure>
                   {/* <h2>{user?.name}</h2> */}
