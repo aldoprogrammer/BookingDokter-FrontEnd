@@ -15,6 +15,11 @@ const DoctorCard = ({doctor}) => {
         hospital,
         experiences
     } = doctor;
+
+    
+
+    const roundedTotalRating = Math.round(totalRating);
+
   return (
     <div className='p-3 lg:p-5'>
         <div>
@@ -40,7 +45,7 @@ const DoctorCard = ({doctor}) => {
                 </span>
                 <span className='text-[14px] leading-6
                 lg:text-[16px] lg:leading-7 font-normal text-textColor'>
-                    ({totalRating})
+                        ({roundedTotalRating})
                 </span>
             </div>
         </div>

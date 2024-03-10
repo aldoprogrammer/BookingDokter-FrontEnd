@@ -37,6 +37,9 @@ const DoctorDetails = () => {
     about,
 } = doctor;
 
+const roundedTotalRating = totalRating ? totalRating.toFixed(1) : 0;
+
+
   return (
     <section className='mt-10'>
       <div className="max-w-[1170px] px-5 mx-auto">
@@ -75,7 +78,7 @@ const DoctorDetails = () => {
                   <span className='text-sm
                   leading-5 lg:text-base lg:leading-7 
                   font-normal text-textColor'>
-                    ({totalRating})
+                        ({roundedTotalRating})
                   </span>
                 </div>
 
