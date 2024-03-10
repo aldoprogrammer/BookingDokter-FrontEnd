@@ -32,7 +32,7 @@ const Home = () => {
                   <div className="lg:w-[570px]">
                     <h1 className='text-[36px] leading-[46px] text-headingColor
                     font-[800] md:text-[60px] md:leading-[70px]'>
-                      We help patientss live a healthy, longer life.
+                      We help patients live a healthy, longer life.
                     </h1>
                     <p className='text__para'>
                       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur mollitia eveniet ipsum aperiam illum. Fuga quam assumenda repellendus enim tempore facilis, error veniam, vitae, tempora nostrum quaerat similique repellat. Aperiam?
